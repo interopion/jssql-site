@@ -25,7 +25,7 @@ database. Each database table has a corresponding "Model" which is used to inter
 <h2 class="col">JSSQL Supports</h2>
 JSSQL supports commands as "USE", "SHOW", "CREATE", "DROP", "INSERT" and "SELECT".
 
-[get the PDF]({{ site.url }}/images/database.png)
+![get the PDF]({{ site.url }}/images/database.png)
 </div>
 
 <div class="posts col-md-4">
