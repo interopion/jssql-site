@@ -1,6 +1,7 @@
 ---
 layout: page
 ---
+
 {% include JB/setup %}
 
 <div class="row">
@@ -33,7 +34,6 @@ You possess your own data in local storage.
 It supports indexes and has a rich join support. It gives you the opportunity to merge javascript and sql and get a new language.
 It is offline based application. You put your data in JSON files and they turn to you as a javascript objects.
 Stand alone library without any dependencies. JSSQL is useful and easy to use javascript based sql engine.
-
 
 <p><a href="jsdb-2.js.zip" id="download_button" download> Download </a></p>
 
