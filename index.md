@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 layout: page
 ---
@@ -47,3 +48,6 @@ Stand alone library without any dependencies. JSSQL is useful and easy to use ja
 
 
 
+=======
+Hello world
+>>>>>>> 4c4b194a0b7454080e8a68d3b5c2c97b00a93078
