@@ -18,10 +18,34 @@ h1, h2, h3, h4 {
   color: #f22430;
 }
 #footer {
-  background-color: #fdcd60;
+  #background-color: #9ad1f3;
 }
 
+body {
+	#background: #f6f3f2;
+	#background : #dffafe;
+	#color      : #CCC;
+	background: url('/images/background2.jpg') no-repeat scroll center center / cover #FFF;
+	font-family: monospace;
+	font-size: 15px;
 
+}
+
+.col{
+color: #579ea9;
+
+}
+
+#download_button{
+#border: 1px solid black;
+padding: 40px;
+background: #579ea9;
+color: white;
+border-radius: 10px;
+position: relative;
+top: 50px;
+bottom: 50px;
+}
 
 /* posts index */
 .post > h3.title {
