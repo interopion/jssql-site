@@ -25,7 +25,7 @@ body {
 	#background: #f6f3f2;
 	#background : #dffafe;
 	#color      : #CCC;
-	background: url('/images/background3.jpg') no-repeat scroll center center / cover #FFF;
+	background: url('/images/background3.jpg') scroll center center / cover #FFF;
 	font-family: monospace;
 	font-size: 15px;
 
@@ -35,6 +35,27 @@ body {
 color: #579ea9;
 
 }
+
+.blue{
+	color: #e28909;
+	font-size: 50px;
+	text-align: center;
+}
+
+.red {
+	color:#8d0c27;
+}
+
+.sub_title {
+	font-size: 30px;
+	font-style: italic;
+	text-align: center;
+}
+
+.titles {
+	color: #36c5d2;
+}
+
 
 #download_button{
 #border: 1px solid black;
