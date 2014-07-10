@@ -32,8 +32,7 @@ You possess your own data in local storage.
 It supports indexes and has a rich join support. It gives you the opportunity to merge javascript and sql and get a new language.
 It is offline based application. You put your data in JSON files and they turn to you as a javascript objects.
 Stand alone library without any dependencies. JSSQL is useful and easy to use javascript based sql engine.
-JSSQL ships with a superb ORM: Eloquent. If you have used the Ruby on Rails framework, you will find 
-Eloquent familiar, as it follows the ActiveRecord ORM style of database interaction.
+
 
 
 </div>
