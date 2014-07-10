@@ -7,7 +7,7 @@ header: JSSQL
 {% include JB/setup %}
 
 
-<span class="sub_title">The javascript and sql in browser</span>
+<span class="sub_title orange">The javascript and sql in browser</span>
 
 
 
