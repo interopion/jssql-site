@@ -20,7 +20,7 @@ Javascript browser applications are much more faster than before.
 Thanks to this nowadays there is a large number of web browser based applications. By increasing the number of these applications
 many javascript libraries appeared.
 Libraries which main goal is the web architecture. There is a good differentiation between data, logic and front-end.
-<p><a href="jsdb-2.js.zip" id="download_button" download> Download </a></p>
+<p><a href="jsdb-2.js.zip" download> Download </a></p>
 
 </div>
 
