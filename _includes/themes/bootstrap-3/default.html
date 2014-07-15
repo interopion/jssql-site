@@ -11,7 +11,22 @@
 
     <!-- Enable responsive viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
+    
+    
+    <meta charset="utf-8">
+    <title>JSDoc: <?js= title ?></title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+    
+    
+    
     <!-- Bootstrap styles -->
     <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Optional theme -->
@@ -56,21 +71,18 @@
           </button>
           <a class="navbar-brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
         </div>
-
+		
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="jb-navbar-collapse">
           <ul class="nav navbar-nav">
             {% assign pages_list = site.pages %}
             {% assign group = 'navigation' %}
             {% include JB/pages_list %}
+            
           </ul>
-          
-          <form class="navbar-form navbar-right" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-info">Submit</button>
-          </form>
+          <div class="navbar-brand navbar-nav navbar-default">
+              <a href="doc">API</a>
+          </div>
         </div><!-- /.navbar-collapse -->
       </nav>
 

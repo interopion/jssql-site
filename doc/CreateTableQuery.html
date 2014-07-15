@@ -1,0 +1,784 @@
+---
+group: navigation
+layout: page
+---
+
+{% include JB/setup %}
+
+
+<div id="main">
+<p><a href="/">Back to main page</a></p>   
+    <h1 class="page-title">Class: CreateTableQuery</h1>
+    
+    
+
+
+
+<section>
+    
+<header>
+    <h2>
+    CreateTableQuery
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+<dt>
+    <h4 class="name" id="CreateTableQuery"><span class="type-signature"></span>new CreateTableQuery<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Class CreateDatabaseQuery extends CreateQuery
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="query.js.html">query.js</a>, <a href="query.js.html#line137">line 137</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Methods</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="execute"><span class="type-signature"></span>execute<span class="signature">()</span><span class="type-signature"> &rarr; {void}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Executes the query.
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="query.js.html">query.js</a>, <a href="query.js.html#line239">line 239</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">void</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="generateSQL"><span class="type-signature"></span>generateSQL<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="global.html#String">String</a>}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Generates and returns a "CREATE TABLE" SQL query. This is used by the 
+toString method too.
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="query.js.html">query.js</a>, <a href="query.js.html#line208">line 208</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    <h5>Throws:</h5>
+    
+            
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        If the instance is incomplete
+        </div>
+    </dt>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">SQLRuntimeError</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+</dl>
+
+
+        
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    The query as formatted SQL string
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="global.html#String">String</a></span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="ifNotExists"><span class="type-signature"></span>ifNotExists<span class="signature">(bIf)</span><span class="type-signature"> &rarr; {Boolean|<a href="CreateTableQuery.html">CreateTableQuery</a>}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Sets or gets the "_ifNotExists" flag. If the argument is missing (or if it
+is undefined) returns the current value. Otherwise the argument is converted
+to boolean and applied to the "_ifNotExists" flag.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>bIf</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="query.js.html">query.js</a>, <a href="query.js.html#line176">line 176</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Returns the instance on set or the 
+                                   _ifNotExists value on get.
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">Boolean</span>
+|
+
+<span class="param-type"><a href="CreateTableQuery.html">CreateTableQuery</a></span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="name"><span class="type-signature"></span>name<span class="signature">(tableName)</span><span class="type-signature"> &rarr; {<a href="global.html#String">String</a>|<a href="CreateTableQuery.html">CreateTableQuery</a>}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Sets or gets the "name" of the table that should be created. If the 
+argument is falsy returns the current name. Otherwise the argument is 
+converted to string and written to the "name" property.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>tableName</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#String">String</a></span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="query.js.html">query.js</a>, <a href="query.js.html#line221">line 221</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Returns the instance on set or the 
+                                  current name on get.
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="global.html#String">String</a></span>
+|
+
+<span class="param-type"><a href="CreateTableQuery.html">CreateTableQuery</a></span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="temporary"><span class="type-signature"></span>temporary<span class="signature">(bTemp)</span><span class="type-signature"> &rarr; {Boolean|<a href="CreateTableQuery.html">CreateTableQuery</a>}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Sets or gets the "_temporary" flag. If the argument is missing (or if it
+is undefined) returns the current value. Otherwise the argument is converted
+to boolean and applied to the "_temporary" flag.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>bTemp</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="query.js.html">query.js</a>, <a href="query.js.html#line193">line 193</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Returns the instance on set or the 
+                                   _temporary value on get.
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">Boolean</span>
+|
+
+<span class="param-type"><a href="CreateTableQuery.html">CreateTableQuery</a></span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="CreateDatabaseQuery.html">CreateDatabaseQuery</a></li><li><a href="CreateTableQuery.html">CreateTableQuery</a></li><li><a href="Result.html">Result</a></li><li><a href="TableIndex.html">TableIndex</a></li><li><a href="TableRow.html">TableRow</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Array">Array</a></li><li><a href="global.html#Column_BIT">Column_BIT</a></li><li><a href="global.html#floatVal">floatVal</a></li><li><a href="global.html#intVal">intVal</a></li><li><a href="global.html#LocalStorage">LocalStorage</a></li><li><a href="global.html#MemoryStorage">MemoryStorage</a></li><li><a href="global.html#Number">Number</a></li><li><a href="global.html#Object">Object</a></li><li><a href="global.html#prettyList">prettyList</a></li><li><a href="global.html#quote">quote</a></li><li><a href="global.html#roundToPrecision">roundToPrecision</a></li><li><a href="global.html#setCurrentDatabase">setCurrentDatabase</a></li><li><a href="global.html#strf">strf</a></li><li><a href="global.html#string">string</a></li><li><a href="global.html#String">String</a></li><li><a href="global.html#Table">Table</a></li><li>{Boolean}</li><li>{<a href="global.html#String">String</a>}</li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Mon Jul 14 2014 18:17:47 GMT+0300 (EEST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>

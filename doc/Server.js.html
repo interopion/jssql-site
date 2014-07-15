@@ -1,0 +1,194 @@
+---
+group: navigation
+layout: page
+---
+
+{% include JB/setup %}
+
+
+<div id="main">
+<p><a href="/">Back to main page</a></p>   
+    <h1 class="page-title">Source: Server.js</h1>
+    
+    
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source"><code>
+function Server()
+{
+	this.databases = {};
+}
+
+Server.prototype = new Persistable();
+Server.prototype.constructor = Server;
+
+Server.prototype.getStorageKey = function()
+{
+	return NS;
+};
+
+Server.prototype.toJSON = function()
+{
+	var json = { databases : {} };
+	for ( var name in this.databases ) {
+		json.databases[name] = this.databases[name].getStorageKey();
+	}
+	return json;
+};
+
+Server.prototype.load = function(onSuccess, onError)
+{
+	var inst = this;
+	JSDB.events.dispatch("loadstart:server", inst);
+	this.read(
+		function(json) {
+			if (!json) {
+				JSDB.events.dispatch("load:server", inst);
+				onSuccess.call(inst);
+				return;
+			}
+
+			var databases = [], dbName, dbCount = 0, db, i = 0, loaded = 0;
+			
+			function onDatabaseLoad(db)
+			{
+				return function()
+				{
+					inst.databases[db.name] = db;
+					if (++loaded === dbCount) {
+						JSDB.events.dispatch("load:server", inst);
+						inst.loaded = true;
+						onSuccess.call(inst);
+					}
+				};
+			}
+
+			// Clear current databases (if any)
+			inst.databases = {};
+
+
+			if (json.databases) {
+				for ( dbName in json.databases ) {
+					if (json.databases.hasOwnProperty(dbName)) {
+						db = new Database(dbName);
+						databases[dbCount++] = db;
+					}
+				}
+			}
+
+			if (dbCount > 0) {
+				for ( i = 0; i &lt; dbCount; i++ ) {
+					db = databases[i];
+					db.load(onDatabaseLoad(db), onError);
+				}
+			} else {
+				JSDB.events.dispatch("load:server", inst);
+				onSuccess.call(inst);
+			}
+
+			//inst.save();
+		},
+		onError
+	);
+	//var json = this.read(), db, meta;
+	//if (json) {
+	//	this.databases = {};
+	//	for ( var name in json.databases ) {
+	//		db = new Database(name);
+	//		db.load();
+	//		this.databases[name] = db;
+	//	}
+	//	this.save();
+	//}
+	return this;
+};
+
+/**
+ * Creates and returns new Database
+ * @param {String} name The name of the database to create
+ * @param {Boolean} ifNotExists Note that an exception will be thrown if such 
+ * database exists and this is not set to true.
+ * @return void
+ */
+Server.prototype.createDatabase = function(name, ifNotExists) 
+{
+	if (typeof name != "string") {
+		throw new SQLRuntimeError("Invalid database name");
+	}
+
+	if (!name) {
+		throw new SQLRuntimeError("No database name");
+	}
+
+	if (this.databases.hasOwnProperty(name)) {
+		if (!ifNotExists) {
+			throw new SQLRuntimeError('Database "' + name + '" already exists');
+		}
+		return this.databases[name];
+	}
+
+	var db = new Database(name);
+	db.save();
+	this.databases[name] = db;
+	this.save();
+	return db;
+};
+
+Server.prototype.dropDatabase = function(name, ifExists) 
+{
+	if (this.databases.hasOwnProperty(name)) {
+		if (this.currentDatabase === this.databases[name])
+			this.currentDatabase = null;
+		this.databases[name].drop();
+		delete this.databases[name];
+		this.save();
+	} else {
+		if (!ifExists) {
+			throw new SQLRuntimeError('Database "' + name + '" does not exist');
+		}
+	}
+};
+
+Server.prototype.getDatabase = function(name)
+{
+	return this.databases[trim(name)];
+};
+
+Server.prototype.setCurrentDatabase = function(name)
+{
+	var db = trim(name);
+	if (!this.databases.hasOwnProperty(db)) {
+		throw new SQLRuntimeError('No such database "%s".', db);
+	}
+	CURRENT_DATABASE = this.currentDatabase = this.databases[db];
+};
+
+Server.prototype.getCurrentDatabase = function()
+{
+	return this.currentDatabase;
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="CreateDatabaseQuery.html">CreateDatabaseQuery</a></li><li><a href="CreateTableQuery.html">CreateTableQuery</a></li><li><a href="Result.html">Result</a></li><li><a href="TableIndex.html">TableIndex</a></li><li><a href="TableRow.html">TableRow</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Array">Array</a></li><li><a href="global.html#Column_BIT">Column_BIT</a></li><li><a href="global.html#floatVal">floatVal</a></li><li><a href="global.html#intVal">intVal</a></li><li><a href="global.html#LocalStorage">LocalStorage</a></li><li><a href="global.html#MemoryStorage">MemoryStorage</a></li><li><a href="global.html#Number">Number</a></li><li><a href="global.html#Object">Object</a></li><li><a href="global.html#prettyList">prettyList</a></li><li><a href="global.html#quote">quote</a></li><li><a href="global.html#roundToPrecision">roundToPrecision</a></li><li><a href="global.html#setCurrentDatabase">setCurrentDatabase</a></li><li><a href="global.html#strf">strf</a></li><li><a href="global.html#string">string</a></li><li><a href="global.html#String">String</a></li><li><a href="global.html#Table">Table</a></li><li>{Boolean}</li><li>{<a href="global.html#String">String</a>}</li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Mon Jul 14 2014 18:17:46 GMT+0300 (EEST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+

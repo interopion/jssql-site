@@ -22,10 +22,10 @@ h1, h2, h3, h4 {
 }
 
 body {
-	#background: #f6f3f2;
+	#background: #efeeee;
 	#background : #dffafe;
 	#color      : #CCC;
-	background: url('/images/background3.jpg') scroll center center / cover #FFF;
+	#background: url('/images/background3.jpg') scroll center center / cover #FFF;
 	font-family: monospace;
 	font-size: 15px;
 
@@ -58,6 +58,11 @@ color: #579ea9;
 
 .orange{
 	color: #f1935a;
+}
+
+.api{
+	text-align: center;
+	padding-top: 10%;
 }
 
 #download_button{
