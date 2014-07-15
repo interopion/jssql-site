@@ -21,39 +21,42 @@ layout: page
  * @param {Table} table (optional; can be set later too)
  * @constructor
  * @return {TableRow}
+ * @extends Persistable
  */
 function TableRow(table, id)
 {
 	/**
 	 * The id of the row is just it's sequence number provided by the contaning
 	 * Table instance.
-	 * @var Number
+	 * @type Number
+	 * @readonly
 	 */
 	this.id = id;
 
 	/**
 	 * The Table of this row
-	 * @var Table
+	 * @type Table
 	 */
 	this.table = null;
 
 	/**
 	 * The length of the row, i.e. the number of the cells inside it.
 	 * IMPORTANT: Must me treated as read-only
-	 * @var Number
+	 * @type Number
+	 * @readonly
 	 */
 	this.length = 0;
 
 	/**
 	 * The actual data collection
-	 * @var Array
+	 * @type Array
 	 * @private
 	 */
 	this._data = [];
 	
 	/**
 	 * The collection of TableCell objects by name
-	 * @var Object
+	 * @type Object
 	 * @private
 	 */
 	this._cellsByName = {};
@@ -76,6 +79,17 @@ TableRow.prototype.getStorageKey = function()
 	].join(".");
 };
 
+/**
+ * Loads the row data from the storage.
+ * @emits loadstart:row - before the loading starts
+ * @emits load:row - If the load was successfully completed
+ * @return {void} This method is async. Use the callback instead of relying on 
+ * 		return value.
+ * @param {Function} onSuccess - The callback to be invoced upon successfull 
+ * load. It will be called with the row object as a single argument.
+ * @param {Function} onError - The callback to be invoced upon failure. It will
+ *		be called with the Error object as a single argument.
+ */
 TableRow.prototype.load = function(onSuccess, onError)
 {
 	var row = this;
@@ -91,12 +105,23 @@ TableRow.prototype.load = function(onSuccess, onError)
 	}, onError);
 };
 
+/**
+ * Saves the row data to the storage.
+ * @emits savestart:row - before the saving starts
+ * @emits save:row - If the save was successfully completed
+ * @return {void} This method is async. Use the callback instead of relying on 
+ * 		return value.
+ * @param {Function} onSuccess - The callback to be invoced upon successfull 
+ * load. It will be called with the row object as a single argument.
+ * @param {Function} onError - The callback to be invoced upon failure. It will
+ *		be called with the Error object as a single argument.
+ */
 TableRow.prototype.save = function(onSuccess, onError)
 {
 	var row = this;
-	JSDB.events.dispatch("before_save:row", row);
+	JSDB.events.dispatch("savestart:row", row);
 	row.write( this._data, function() {
-		JSDB.events.dispatch("after_save:row", row);
+		JSDB.events.dispatch("save:row", row);
 		if (onSuccess) onSuccess(row);
 	}, onError );
 };
@@ -224,13 +249,13 @@ TableRow.prototype.toJSON = function(mixed)
 </div>
 
 <nav>
-    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="CreateDatabaseQuery.html">CreateDatabaseQuery</a></li><li><a href="CreateTableQuery.html">CreateTableQuery</a></li><li><a href="Result.html">Result</a></li><li><a href="TableIndex.html">TableIndex</a></li><li><a href="TableRow.html">TableRow</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Array">Array</a></li><li><a href="global.html#Column_BIT">Column_BIT</a></li><li><a href="global.html#floatVal">floatVal</a></li><li><a href="global.html#intVal">intVal</a></li><li><a href="global.html#LocalStorage">LocalStorage</a></li><li><a href="global.html#MemoryStorage">MemoryStorage</a></li><li><a href="global.html#Number">Number</a></li><li><a href="global.html#Object">Object</a></li><li><a href="global.html#prettyList">prettyList</a></li><li><a href="global.html#quote">quote</a></li><li><a href="global.html#roundToPrecision">roundToPrecision</a></li><li><a href="global.html#setCurrentDatabase">setCurrentDatabase</a></li><li><a href="global.html#strf">strf</a></li><li><a href="global.html#string">string</a></li><li><a href="global.html#String">String</a></li><li><a href="global.html#Table">Table</a></li><li>{Boolean}</li><li>{<a href="global.html#String">String</a>}</li></ul>
+    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="Column.html">Column</a></li><li><a href="Column_BIGINT.html">Column_BIGINT</a></li><li><a href="Column_BIT.html">Column_BIT</a></li><li><a href="Column_INT.html">Column_INT</a></li><li><a href="Column_INTEGER.html">Column_INTEGER</a></li><li><a href="Column_MEDIUMINT.html">Column_MEDIUMINT</a></li><li><a href="Column_SMALLINT.html">Column_SMALLINT</a></li><li><a href="Column_TINYINT.html">Column_TINYINT</a></li><li><a href="CreateDatabaseQuery.html">CreateDatabaseQuery</a></li><li><a href="CreateTableQuery.html">CreateTableQuery</a></li><li><a href="LocalStorage.html">LocalStorage</a></li><li><a href="MemoryStorage.html">MemoryStorage</a></li><li><a href="NumericColumn.html">NumericColumn</a></li><li><a href="Result.html">Result</a></li><li><a href="Table.html">Table</a></li><li><a href="TableIndex.html">TableIndex</a></li><li><a href="TableRow.html">TableRow</a></li></ul><h3>Global</h3><ul><li><a href="global.html#floatVal">floatVal</a></li><li><a href="global.html#intVal">intVal</a></li><li><a href="global.html#prettyList">prettyList</a></li><li><a href="global.html#quote">quote</a></li><li><a href="global.html#roundToPrecision">roundToPrecision</a></li><li><a href="global.html#setCurrentDatabase">setCurrentDatabase</a></li><li><a href="global.html#Storage">Storage</a></li><li><a href="global.html#strf">strf</a></li><li>{Boolean}</li><li>{String}</li></ul>
 </nav>
 
 <br clear="both">
 
 <footer>
-    <!--Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Tue Jul 15 2014 11:34:45 GMT+0300 (EEST)-->
+    <!--Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Tue Jul 15 2014 16:12:02 GMT+0300 (EEST)-->
 </footer>
 
 <script> prettyPrint(); </script>

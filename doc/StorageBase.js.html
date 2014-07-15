@@ -8,7 +8,7 @@ layout: page
 
 <div id="main">
 <p><a href="/">Back to main page</a></p>   
-    <h1 class="page-title">Source: storage/LocalStorage.js</h1>
+    <h1 class="page-title">Source: storage/StorageBase.js</h1>
     
     
 
@@ -17,96 +17,56 @@ layout: page
     <section>
         <article>
             <pre class="prettyprint source"><code>/**
- * Class LocalStorage extends LocalStorage
- * @constructor
- * @extends {StorageBase}
+ * @classdesc The Storage is a singleton storage manager
  */
-function LocalStorage() 
-{
-	this.setMany = function(map, onSuccess, onError)
-	{
-		setTimeout(function() {
-			try {
-				for ( var key in map )
-					localStorage.setItem( key, map[key] );
-				if (onSuccess) 
-						onSuccess();
-			} catch (ex) {
-				(onError || defaultErrorHandler)(ex);
-			}
-		}, 0);
-	};
-
-	this.getMany = function(keys, onSuccess, onError)
-	{
-		setTimeout(function() {
-			try {
-				var out = [];
-				for (var i = 0, l = keys.length; i &lt; l; i++)
-					out.push( localStorage.getItem( keys[i] ) );
-				if (onSuccess) 
-					onSuccess( out );
-			} catch (ex) {
-				(onError || defaultErrorHandler)(ex);
-			}
-		}, 0);
-	};
-
-	this.unsetMany = function(keys, onSuccess, onError)
-	{
-		setTimeout(function() {
-			try {
-				for (var i = 0, l = keys.length; i &lt; l; i++)
-					localStorage.removeItem( keys[i] );
-				if (onSuccess) 
-					onSuccess();
-			} catch (ex) {
-				(onError || defaultErrorHandler)(ex);
-			}
-		}, 0);
-	};
-
-	this.set = function(key, value, onSuccess, onError) 
-	{
-		setTimeout(function() {
-			try {
-				localStorage.setItem( key, value );
-				if (onSuccess)
-					onSuccess();
-			} catch (ex) {
-				(onError || defaultErrorHandler)(ex);
-			}
-		}, 0);
-	};
+var Storage = (function() {
+	var engines = {},
+		engineInstances = {};
 	
-	this.get = function(key, onSuccess, onError) 
-	{
-		setTimeout(function() {
-			try {
-				if (onSuccess)
-					onSuccess(localStorage.getItem( key ));
-			} catch (ex) {
-				(onError || defaultErrorHandler)(ex);
+	return {
+		getEngine : function(name) {
+			if (!engineInstances[name]) {
+				engineInstances[name] = new engines[name]();
 			}
-		}, 0);
+			return engineInstances[name];
+		},
+		registerEngine : function(name, constructor) {
+			if (engines[name])
+				throw new Error(
+					'Storage engine "' + name + '" is already registered.'
+				);
+			engines[name] = constructor;
+		},
+		getEnginePrototype : function() {
+			return {
+				set : function(key, value, onSuccess, onError) 
+				{
+					onError("Failed to save - not implemented.");
+				},
+				get : function(key, onSuccess, onError) 
+				{
+					onError("Failed to read - not implemented.");
+				},
+				unset : function(key, onSuccess, onError) 
+				{
+					onError("Failed to delete - not implemented.");
+				},
+				setMany : function(map, onSuccess, onError)
+				{
+					onError("Failed to save - not implemented.");
+				},
+				getMany : function(keys, onSuccess, onError)
+				{
+					onError("Failed to read - not implemented.");
+				},
+				unsetMany : function(keys, onSuccess, onError)
+				{
+					onError("Failed to delete - not implemented.");
+				}
+			};
+		}
 	};
-	
-	this.unset = function(key, onSuccess, onError) 
-	{
-		setTimeout(function() {
-			try {
-				localStorage.removeItem( key );
-				if (onSuccess)
-					onSuccess();
-			} catch (ex) {
-				(onError || defaultErrorHandler)(ex);
-			}
-		}, 0);
-	};
-}
-LocalStorage.prototype = Storage.getEnginePrototype();
-LocalStorage.prototype.constructor = LocalStorage;
-Storage.registerEngine("LocalStorage", LocalStorage);
+})();
 </code></pre>
         </article>
     </section>
