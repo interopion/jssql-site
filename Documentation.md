@@ -10,7 +10,7 @@ layout: page
 
 <h3>JSSQL Statement Syntax</h3>
 
-<p class="titles">JSSQL <span class="orange">CREATE DATABASE </span> Syntax</p>
+<p class="titles">JSSQL <span class="orange">CREATE DATABASE</span> Syntax</p>
 
 	CREATE DATABASE dbname;
 
