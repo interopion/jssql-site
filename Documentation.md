@@ -8,7 +8,7 @@ layout: page
 {% include JB/setup %}
 
 
-<h3>JSSQL Statement Syntax</h3>
+<h3>JSSQLL Statement Syntax</h3>
 
 <p class="titles">JSSQL <span class="orange">CREATE DATABASE</span> Syntax</p>
 
