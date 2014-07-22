@@ -31,6 +31,29 @@ body {
 
 }
 
+table.reference th {
+    color: #FFF;
+    background-color: #555;
+    border: 1px solid #555;
+    padding: 3px;
+    vertical-align: top;
+    text-align: left;
+}
+
+table.reference td {
+    border: 1px solid #D4D4D4;
+    padding: 7px 5px;
+    vertical-align: top;
+}
+
+table.reference tr:nth-child(even) {
+    background-color: #f8f7e4;
+}
+
+table.reserved_words tr:nth-child(odd) {
+    background-color: #e4f8e7;
+}
+
 .col{
 color: #579ea9;
 
