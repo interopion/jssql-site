@@ -176,7 +176,7 @@ layout: page
 </tr>
 <tr>
 <td>BIT</td>
-<td>Stores TRUE or FALSE values</td>
+<td>Stores TRUE or FALSE values </td>
 </tr>
 <tr>
 <td>VARBINARY(n) or<br>BINARY VARYING(n)</td>
