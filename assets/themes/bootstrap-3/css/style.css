@@ -24,12 +24,32 @@ h1, h2, h3, h4 {
 body {
 	#background: #efeeee;
 	#background : #dffafe;
-	#color      : #CCC;
+	#color      : #fff;
 	#background: url('/images/background3.jpg') scroll center center / cover #FFF;
 	font-family: monospace;
-	font-size: 15px;
+	font-size: 14px;
+	#font-style: italic;
 
 }
+
+.border_front{
+	#border: 1px solid grey;
+	color: #6f5a5a;
+
+}
+
+.one_border{
+	background: #fcf5f3;
+}
+
+.two_border{
+	background: #f7f8de;
+}
+
+.three_border{
+	background: #eefcfb;
+}
+
 
 table.reference th {
     color: #FFF;
