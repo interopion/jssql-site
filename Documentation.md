@@ -12,147 +12,147 @@ layout: page
 
 <p class="titles">JSSQL <span class="orange">CREATE DATABASE</span> Syntax</p>
 
-CREATE DATABASE dbname;
+	CREATE DATABASE dbname;
 
 <p class="titles">JSSQL CREATE TABLE</span> Syntax</p>
 
-CREATE TABLE table_name
-(
-column_name1 data_type(size),
-column_name2 data_type(size),
-column_name3 data_type(size),
-....
-);
+	CREATE TABLE table_name
+	(
+	column_name1 data_type(size),
+	column_name2 data_type(size),
+	column_name3 data_type(size),
+	....
+	);
 
 <p class="titles">The <span class="orange">DROP TABLE</span> Statement</p>
 
 <p>The DROP TABLE statement is used to delete a table.</p>
 
-DROP TABLE table_name
+	DROP TABLE table_name
 
 <p class="titles">The <span class="orange">DROP DATABASE</span> Statement</p>
 
 <p>The DROP DATABASE statement is used to delete a database.</p>
 
-DROP DATABASE database_name
+	DROP DATABASE database_name
 
 <p class="titles">JSSQL <span class="orange">INSERT INTO</span> Syntax</p>
 
-INSERT INTO table_name (column1,column2,column3,...)
+	INSERT INTO table_name (column1,column2,column3,...)
 
-VALUES (value1,value2,value3,...);
+	VALUES (value1,value2,value3,...);
 
 <p class="titles">JSSQL <span class="orange">SELECT</span> Syntax</p>
 
-SELECT column_name,column_name
-FROM table_name;
+	SELECT column_name,column_name
+	FROM table_name;
 
 <p>and</p>
 
-SELECT * FROM table_name;
+	SELECT * FROM table_name;
 
 
 <p class="titles">JSSQL <span class="orange">WHERE</span> Syntax</p>
 
-SELECT column_name,column_name
-FROM table_name
-WHERE column_name operator value;
+	SELECT column_name,column_name
+	FROM table_name
+	WHERE column_name operator value;
 
 <p class="titles">JSSQL <span class="orange">ORDER BY</span> Syntax</p>
 
-SELECT column_name,column_name
-FROM table_name
-ORDER BY column_name,column_name ASC|DESC;
+	SELECT column_name,column_name
+	FROM table_name
+	ORDER BY column_name,column_name ASC|DESC;
 
 <p class="titles">JSSQL <span class="orange">UPDATE</span> Syntax</p>
 
-UPDATE table_name
-SET column1=value1,column2=value2,...
-WHERE some_column=some_value;
+	UPDATE table_name
+	SET column1=value1,column2=value2,...
+	WHERE some_column=some_value;
 
 <p class="titles">JSSQL <span class="orange">DELETE</span> Syntax</p>
 
-DELETE FROM table_name
-WHERE some_column=some_value;
+	DELETE FROM table_name
+	WHERE some_column=some_value;
 
 <p class="titles">JSSQL <span class="orange">LIKE</span> Syntax</p>
 
-SELECT column_name(s)
-FROM table_name
-WHERE column_name LIKE pattern;
+	SELECT column_name(s)
+	FROM table_name
+	WHERE column_name LIKE pattern;
 
 <p class="titles">JSSQL <span class="orange">IN</span> Syntax</p>
 
-SELECT column_name(s)
-FROM table_name
-WHERE column_name IN (value1,value2,...);
+	SELECT column_name(s)
+	FROM table_name
+	WHERE column_name IN (value1,value2,...);
 
 
 <p class="titles">JSSQL <span class="orange">BETWEEN</span> Syntax</p>
 
-SELECT column_name(s)
-FROM table_name
-WHERE column_name BETWEEN value1 AND value2;
+	SELECT column_name(s)
+	FROM table_name
+	WHERE column_name BETWEEN value1 AND value2;
 
 
 <p class="titles">JSSQL <span class="orange">INNER JOIN</span> Syntax</p>
 
-SELECT column_name(s)
-FROM table1
-INNER JOIN table2
-ON table1.column_name=table2.column_name;
+	SELECT column_name(s)
+	FROM table1
+	INNER JOIN table2
+	ON table1.column_name=table2.column_name;
 
 <p>or:</p>
 
-SELECT column_name(s)
-FROM table1
-JOIN table2
-ON table1.column_name=table2.column_name;
+	SELECT column_name(s)
+	FROM table1
+	JOIN table2
+	ON table1.column_name=table2.column_name;
 
 <p class="titles">JSSQL <span class="orange">LEFT JOIN</span> Syntax</p>
 
-SELECT column_name(s)
-FROM table1
-LEFT JOIN table2
-ON table1.column_name=table2.column_name;
+	SELECT column_name(s)
+	FROM table1
+	LEFT JOIN table2
+	ON table1.column_name=table2.column_name;
 
 <p>or:</p>
 
-SELECT column_name(s)
-FROM table1
-LEFT OUTER JOIN table2
-ON table1.column_name=table2.column_name;
+	SELECT column_name(s)
+	FROM table1
+	LEFT OUTER JOIN table2
+	ON table1.column_name=table2.column_name;
 
 
 <p class="titles">JSSQL <span class="orange">RIGHT JOIN</span> Syntax</p>
 
-SELECT column_name(s)
-FROM table1
-RIGHT JOIN table2
-ON table1.column_name=table2.column_name;
+	SELECT column_name(s)
+	FROM table1
+	RIGHT JOIN table2
+	ON table1.column_name=table2.column_name;
 
 <p>or:</p>
 
-SELECT column_name(s)
-FROM table1
-RIGHT OUTER JOIN table2
-ON table1.column_name=table2.column_name;
+	SELECT column_name(s)
+	FROM table1
+	RIGHT OUTER JOIN table2
+	ON table1.column_name=table2.column_name;
 
 
 <p class="titles">JSSQL <span class="orange">FULL OUTER JOIN</span> Syntax</p>
 
-SELECT column_name(s)
-FROM table1
-FULL OUTER JOIN table2
-ON table1.column_name=table2.column_name;
+	SELECT column_name(s)
+	FROM table1
+	FULL OUTER JOIN table2
+	ON table1.column_name=table2.column_name;
 
 <p class="titles">JSSQL <span class="orange">SHOW</span> Syntax</p>
 
-SHOW tables from database_name;
+	SHOW tables from database_name;
 
 <p class="titles">JSSQL <span class="orange">USE</span> Syntax</p>
 
-USE database_name;
+	USE database_name;
 
 
 <h3>Data types</h3>
