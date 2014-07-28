@@ -10,7 +10,7 @@ layout: page
 
 <h3>JSSQL Statement Syntax</h3>
 
-<p class="titles">JSSQL <span class="orange">CREATE DATABASE </span> Syntax</p>
+<p class="titles">JSSQL <span class="orange">CREATE DATABASE</span> Syntax</p>
 
 	CREATE DATABASE dbname;
 
@@ -176,7 +176,7 @@ layout: page
 </tr>
 <tr>
 <td>BIT</td>
-<td>Stores TRUE or FALSE values </td>
+<td>Stores TRUE or FALSE values</td>
 </tr>
 <tr>
 <td>VARBINARY(n) or<br>BINARY VARYING(n)</td>

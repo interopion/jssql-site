@@ -7,7 +7,7 @@ header: JSSQL
 
 
 
-<img src="images/logo2.png" class="col-md-offset-1"/>
+<img src="images/logo3.png" class="col-md-offset-1"/>
 
 
 <div class="row">
