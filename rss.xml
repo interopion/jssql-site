@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+        <title>JSSQL</title>
+        <description>JSSQL - Iva Toshkova</description>
+        <link>http://jssql-site.github.io/jssql-site</link>
+        <link>http://jssql-site.github.io/jssql-site</link>
+        <lastBuildDate>2015-03-14T17:14:49+00:00</lastBuildDate>
+        <pubDate>2015-03-14T17:14:49+00:00</pubDate>
+        <ttl>1800</ttl>
+
+
+        <item>
+                <title>Introduction</title>
+                <description>&lt;h2 id=&quot;hjhjhjhjhj&quot;&gt;hjhjhjhjhj&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;	jkjjnjnjnj
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+                <link>http://jssql-site.github.io/jssql-site/iva/2010/12/29/introduction</link>
+                <guid>http://jssql-site.github.io/jssql-site/iva/2010/12/29/introduction</guid>
+                <pubDate>2010-12-29T00:00:00+00:00</pubDate>
+        </item>
+
+        <item>
+                <title>Support</title>
+                <description>
+</description>
+                <link>http://jssql-site.github.io/jssql-site/iva/2010/11/22/support</link>
+                <guid>http://jssql-site.github.io/jssql-site/iva/2010/11/22/support</guid>
+                <pubDate>2010-11-22T00:00:00+00:00</pubDate>
+        </item>
+
+        <item>
+                <title>Demos</title>
+                <description>
+</description>
+                <link>http://jssql-site.github.io/jssql-site/iva/2010/10/12/demos</link>
+                <guid>http://jssql-site.github.io/jssql-site/iva/2010/10/12/demos</guid>
+                <pubDate>2010-10-12T00:00:00+00:00</pubDate>
+        </item>
+
+        <item>
+                <title>Client Side Usage</title>
+                <description>
+</description>
+                <link>http://jssql-site.github.io/jssql-site/iva/2010/09/02/Client-side-usage</link>
+                <guid>http://jssql-site.github.io/jssql-site/iva/2010/09/02/Client-side-usage</guid>
+                <pubDate>2010-09-02T00:00:00+00:00</pubDate>
+        </item>
+
+        <item>
+                <title>Installation</title>
+                <description>&lt;p&gt;Use jQuery&lt;/p&gt;
+
+&lt;p&gt;Use this code to include JSSQL with jQuery:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;script type=&quot;text/javascript&quot; src=&quot;jquery.min.js&quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;jquery.min.js.zip&quot;&gt;download jquery.min.js&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;script type=&quot;text/javascript&quot; src=&quot;jsdb-2.js&quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;jsdb-2.js.zip&quot;&gt;download jsdb-2.js&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;AND&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html class=&quot;ios ios-7&quot;&amp;gt;
+&amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&quot;utf-8&quot; /&amp;gt;
+    &amp;lt;title&amp;gt;DB Tests&amp;lt;/title&amp;gt;
+    &amp;lt;style type=&quot;text/css&quot;&amp;gt;
+    
+        html {
+            height: 100%;
+        }
+
+        body {
+            margin     : 0;
+            padding    : 0;
+            background : #000;
+            color      : #CCC;
+            font-family: monospace;
+            font-size  : 20px;
+            height     : 100%;
+            position   : relative;
+        }
+
+        ::-moz-selection {
+            background-color: #555;
+            color: #FFF;
+            text-shadow: 0 1px 0 #000;
+        }
+        ::selection {
+            background-color: #999 !important;
+            /*color: #FFF;*/
+            text-shadow: 0 1px 0 #000;
+        }
+
+        pre {
+            margin     : 0;
+            padding    : 4px 4px 4px 16px;
+            white-space: pre-wrap;
+            -moz-tab-size:4; 
+            -o-tab-size:4; 
+            tab-size:4;
+        }
+
+
+
+        textarea {
+            #position   : absolute;
+            width      : 100%;
+            margin     : -4px 0 0 0;
+            padding    : 0px 4px 0 16px;
+            left       : 0;
+            right      : 0;
+            border     : none;
+            box-sizing : border-box;
+            font-family: monospace;
+            white-space: pre;
+            font-size  : 16px;
+            background : transparent;
+            color      : #CCC;
+            resize     : none;
+            overflow   : visible;
+            -moz-tab-size:4; 
+            -o-tab-size:4; 
+            tab-size:4;
+            min-height: 2em;
+            outline: none;
+        }
+        
+        textarea::-moz-placeholder {
+            color: #777;
+            font-weight: 100;
+            opacity: 0.6;
+        }
+
+        textarea::-webkit-input-placeholder {
+            color: #777;
+            font-weight: 100;
+            opacity: 0.6;
+        }
+        
+        textarea.waiting {
+        	background: url(&quot;76.GIF&quot;) 
+                no-repeat 
+                scroll 
+                4px 4px / 80px 12px 
+                rgba(0, 0, 0, 0);
+            -webkit-user-input: disabled;
+            -moz-user-input: disabled;
+            user-input: disabled;
+        }
+        textarea.waiting::-moz-placeholder {
+            color: transparent;
+        }
+
+        .old-input {
+            /*font-weight: bold;*/
+            color: #8C6;
+        }
+
+        .old-input:before {
+            content: &quot;&quot;;
+            display: inline-block;
+            width  : 0;
+            height : 0;
+            border-width: 6px 0 6px 6px;
+            border-style: inset none inset solid;
+            border-color: transparent transparent transparent #777;
+            line-height: inherit;
+            margin: 0 0 0 -12px;
+            padding: 0 6px 0 0;
+            vertical-align: middle;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .error::-moz-selection {
+            background-color: red;
+            text-shadow: 0 1px 0 #600;
+        }
+        .error::selection {
+            background-color: red;
+            text-shadow: 0 1px 0 #600;
+        }
+
+        blockquote {
+            border-left: 3px double #999;
+            color: #999;
+            margin: 1ex 0 1em 2em;
+            padding: 0 0 0 1ex;
+            font-size: smaller;
+        }
+        
+        .error blockquote {
+            border-left: 3px double #CC9966;
+            color: #CC9966;
+        }
+        
+        table {
+        	border : 1px solid #666;
+        	border-spacing:0;
+        	margin: 1ex 0 1em;
+            table-layout: fixed;
+        }
+        td, th {
+        	border-bottom: 1px solid #666;
+        	border-right : 1px solid #666;
+        	padding: 2px 4px;
+        	text-align: left;
+        }
+        th {
+        	background: #333;
+        	padding: 4px;
+        }
+        td {
+        	border-bottom-color: #333;
+        	border-right : 1px solid #444;
+        	/*border-bottom-style: dotted;*/
+        }
+        td:last-child, th:last-child {
+        	border-right : none;
+        }
+        tr:last-child td {
+        	border-bottom : none;
+        }
+        tr:nth-child(even) {
+        	background: #202020;
+        }
+
+        pre .old-output {
+            margin-bottom: 2em !important;
+        }
+    &amp;lt;/style&amp;gt;
+	&amp;lt;!--
+	&amp;lt;script src=&quot;http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.js&quot; type=&quot;text/javascript&quot;&amp;gt;&amp;lt;/script&amp;gt;
+	&amp;lt;link href=&quot;http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.css&quot; type=&quot;text/css&quot;&amp;gt;
+	--&amp;gt;
+	&amp;lt;script
+	 src=&quot;https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=sql&amp;amp;amp;autoload=true&amp;amp;amp;skin=sunburst&quot;
+	 type=&quot;text/javascript&quot; defer=&quot;defer&quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+    &amp;lt;pre id=&quot;out&quot;&amp;gt;&amp;lt;/pre&amp;gt;
+    &amp;lt;textarea rows=&quot;1&quot; id=&quot;in&quot; spellcheck=&quot;false&quot; placeholder=&quot;Type SQL commads here. Hit Ctrl/Command+Enter to execute.&quot;&amp;gt;&amp;lt;/textarea&amp;gt;
+
+    &amp;lt;script type=&quot;text/javascript&quot;&amp;gt;
+    
+    jQuery(function($) {
+
+        var history    = [&quot;&quot;],
+            historyPos = 0,
+            $in        = $(&quot;#in&quot;),
+            $out       = $(&quot;#out&quot;);
+
+		function table(data) {
+			var html = ['&amp;lt;table&amp;gt;&amp;lt;thead&amp;gt;&amp;lt;tr&amp;gt;'], i, y, c, x;
+			for (i = 0; i &amp;lt; data.head.length; i++) {
+				html.push('&amp;lt;th&amp;gt;', data.head[i], '&amp;lt;/th&amp;gt;');
+			}
+			html.push('&amp;lt;/tr&amp;gt;&amp;lt;/thead&amp;gt;&amp;lt;tbody&amp;gt;');
+			//console.log(&quot;rows: &quot; , data.rows);
+            $.each(data.rows, function(key, c) {
+				
+                if (c.toArray) {
+                    c = c.toArray();
+                }
+				//if (c) {
+					html.push('&amp;lt;tr&amp;gt;');
+					if ($.isArray(c)) {
+						$.each(c, function(x, v) {
+							html.push(
+								'&amp;lt;td&amp;gt;', 
+								v === undefined ? '' : String(v), 
+								'&amp;lt;/td&amp;gt;'
+							);
+						});
+					} else {
+						html.push(
+							'&amp;lt;td&amp;gt;', 
+							c === undefined ? '' : String(c), 
+							'&amp;lt;/td&amp;gt;'
+						);
+					}
+					html.push('&amp;lt;/tr&amp;gt;');
+				//}
+			});
+			html.push('&amp;lt;/tbody&amp;gt;&amp;lt;/table&amp;gt;');
+			return '&amp;lt;p&amp;gt;' + data.rows.length + &quot; rows:&amp;lt;/p&amp;gt;&quot; + html.join(&quot;&quot;);
+		}
+		
+        loadState();
+
+        function saveState()
+        {
+            localStorage[&quot;JSDB-console&quot;] = JSON.stringify({
+                history    : history,
+                historyPos : historyPos
+            });
+        }
+
+        function pushState(txt)
+        {
+            if (txt != history[historyPos]) {
+                historyPos = history.push(txt) - 1;
+                saveState();
+            }
+        }
+
+        function loadState() 
+        {
+            var state = localStorage[&quot;JSDB-console&quot;];
+            if (state) {
+                try { 
+                    state = JSON.parse(state);
+                    if (state.history &amp;amp;&amp;amp; 
+                        Object.prototype.toString.call(state.history) == &quot;[object Array]&quot;) 
+                    {
+                        history = state.history;
+                        if (typeof state.historyPos &amp;amp;&amp;amp; 
+                            state.historyPos &amp;gt;= 0 &amp;amp;&amp;amp; 
+                            state.historyPos &amp;lt; history.length) 
+                        {
+                            historyPos = state.historyPos;
+                        } else {
+                            historyPos = history.length - 1;
+                        }
+                    }
+                } catch (ex) {
+                    saveState();
+                }
+            }
+        }
+
+        function clearState() 
+        {
+            history = [&quot;&quot;];
+            historyPos = 0;
+            saveState();
+            $out.empty();
+            $in.prop({
+                value : &quot;&quot;,
+                selectionStart : 0,
+                selectionEnd   : 0
+            }).trigger(&quot;input&quot;);
+        }
+
+        function historyUp() {
+            var txt = &quot;&quot;, len;
+            if (historyPos &amp;gt; 0) {
+                txt = history[historyPos--];
+                len = txt.length;
+                $in.val(txt);//.attr(&quot;rows&quot;, txt.split(&quot;\n&quot;).length);
+                setTimeout(function() {
+                    //$in.val(txt);
+                    resizeUI();
+                    $in.prop({
+                        selectionEnd   : len,
+                        selectionStart : len
+                    });
+
+                    
+
+                }, 0);
+            }
+        }
+
+        function historyDown() {
+            if (historyPos &amp;lt; history.length - 1) {
+                $(&quot;#in&quot;).val(history[++historyPos]).trigger(&quot;focus&quot;);
+            } else {
+                $(&quot;#in&quot;).val(&quot;&quot;).trigger(&quot;focus&quot;);
+            }
+            setTimeout(resizeUI, 0);
+        }
+
+        function showError(e) {
+        	$out.append(
+                $('&amp;lt;div class=&quot;old-output error&quot;/&amp;gt;')
+                .html('&amp;lt;b style=&quot;color:#666&quot;&amp;gt;' + e.name + ':&amp;lt;/b&amp;gt; ' + e.message)
+            );
+            if (e.stack &amp;amp;&amp;amp; e.name.indexOf(&quot;SQL&quot;) == -1) {
+                $out.append(
+                    $('&amp;lt;div class=&quot;old-output error&quot;/&amp;gt;').html(
+                        'Stack:&amp;lt;blockquote&amp;gt;' +
+                        e.stack + 
+                        '&amp;lt;/blockquote&amp;gt;'
+                    )
+                ); 
+            }
+        }
+		
+		function onError(e) {
+        	//$out.append(
+        	//	$('&amp;lt;code class=&quot;prettyprint old-input lang-sql&quot;/&amp;gt;')
+        	//		.text(input)
+        	//);
+            //PR.prettyPrint(&quot;out&quot;);
+            showError(e);
+        	$in.removeClass(&quot;waiting&quot;).trigger(&quot;input&quot;).trigger(&quot;focus&quot;);
+        }
+        
+        function onSuccess(result) {
+        	//$out.append(
+        	//	$('&amp;lt;code class=&quot;prettyprint old-input lang-sql&quot;/&amp;gt;')
+        	//		.text(input)
+        	//);
+        	
+            if (result &amp;amp;&amp;amp; typeof result == &quot;object&quot;) {
+            	$out.append(table(result));
+            } else {
+            	$out.append(
+            		$('&amp;lt;div class=&quot;old-output&quot;/&amp;gt;')
+            			.text(result || &quot;Done&quot;)
+            	);
+            }
+            
+            PR.prettyPrint(&quot;out&quot;);
+            
+            $in.removeClass(&quot;waiting&quot;).trigger(&quot;input&quot;).trigger(&quot;focus&quot;);
+        }
+        
+        function onComplete(input) {
+        	$out.append(
+        		$('&amp;lt;code class=&quot;prettyprint old-input lang-sql&quot;/&amp;gt;')
+        			.text(input)
+        	);
+            PR.prettyPrint(&quot;out&quot;);
+        }
+
+        function resizeUI() {
+            $in.css({ height : 0 });
+            var wh = $(window).height(),
+                oh = $out.outerHeight();
+                h  = Math.max(wh - oh, $in[0].scrollHeight, 30);
+            //if (h &amp;lt; 30) {
+            //    h = wh/2;//$in[0].scrollHeight;
+            //}
+            $in.css({
+                top    : oh,
+                height : h,
+                //minHeight : h
+            });//[0].scrollIntoViewIfNeeded();
+            //.css(&quot;minHeight&quot;, $in[0].scrollHeight)
+            //[0]
+            //[$in[0].scrollIntoViewIfNeeded ? 
+            //    &quot;scrollIntoViewIfNeeded&quot; :
+            //    &quot;scrollIntoView&quot;]
+            //()
+            ;
+            $(&quot;body&quot;)[0].scrollTop = $(&quot;body&quot;)[0].scrollHeight;
+            //setTimeout(function() {
+             //   $in.css({
+             //       minHeight : $in[0].scrollHeight 
+             //   });
+            //}, 0);
+        }
+        
+        $(window).on(&quot;resize&quot;, resizeUI);
+
+        $(&quot;#in&quot;).on(&quot;input paste keyup&quot;, function() {
+            resizeUI();
+        });
+
+        $(&quot;body&quot;)
+        	.on(&quot;mousedown&quot;, &quot;#out&quot;, function(e) { e.stopPropagation(); })
+            .on(&quot;click&quot;, &quot;#in, #out&quot;, function(e) {
+                e.stopPropagation();
+            })
+            .on(&quot;click&quot;, function(e) {
+                $in.trigger(&quot;focus&quot;);
+            });
+
+        $in.on(&quot;keydown&quot;, function(e) {
+            //console.log(e.keyCode);
+            //setTimeout(resizeUI, 0);
+
+            switch (e.keyCode) {
+                case 9: // Tab
+                    var val = this.value,
+                        start = this.selectionStart;
+                    this.value = val.substring(0, start) + 
+                        &quot;\t&quot; + val.substring(this.selectionEnd);
+                    this.selectionEnd   = start + 1;
+                    this.selectionStart = start + 1;
+                    return false;
+                break;
+                case 38: // Arrow Up
+                	if (!(e.ctrlKey || e.metaKey)) {
+                		return true;
+                	}
+                    historyUp();
+                    return false;
+                break;
+                case 40: // Arrow Down
+                	if (!(e.ctrlKey || e.metaKey)) {
+                		return true;
+                	}
+                    historyDown();
+                    return false;
+                break;
+                case 13: // Enter
+                	if (this.value.indexOf(&quot;;&quot;) &amp;lt; 1) {
+                		return true;
+                	}
+                	if (!(e.ctrlKey || e.metaKey)) {
+                		return true;
+                	}
+                	
+                    setTimeout(function() {
+                        $in.trigger(&quot;input&quot;);
+                    }, 0);
+                    var input = $.trim($(this).val()), out;
+
+                    if (/\s*clear(\s*\(\s*\))?[\s;]*$/.test(input)) {
+                        clearState();
+                        return false;
+                    }
+                    
+                    $out.append(
+	            		$('&amp;lt;code class=&quot;prettyprint old-input lang-sql&quot;/&amp;gt;')
+	            			.text(input)
+	            	);
+	                PR.prettyPrint(&quot;out&quot;);
+                    $in.addClass(&quot;waiting&quot;);
+                    pushState(input);
+                    $in.trigger(&quot;blur&quot;).prop({
+		                value : &quot;&quot;,
+		                selectionStart : 0,
+		                selectionEnd   : 0
+		            });
+		            JSDB.query(input, onSuccess, onError);
+                    return false;
+                break;
+                default:
+                    //setTimeout(function() {
+                    //    $in.attr(&quot;rows&quot;, $in.val().split(&quot;\n&quot;).length);
+                    //});
+                    
+                break;
+            }
+        });
+
+        $in.trigger(&quot;focus&quot;).prop({
+            value : &quot;&quot;,
+            selectionStart : 0,
+            selectionEnd   : 0
+        });
+
+    });
+    &amp;lt;/script&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+</description>
+                <link>http://jssql-site.github.io/jssql-site/iva/2010/08/06/installation</link>
+                <guid>http://jssql-site.github.io/jssql-site/iva/2010/08/06/installation</guid>
+                <pubDate>2010-08-06T00:00:00+00:00</pubDate>
+        </item>
+
+        <item>
+                <title>Jssql Download</title>
+                <description>
+</description>
+                <link>http://jssql-site.github.io/jssql-site/iva/2010/04/12/jssql-download</link>
+                <guid>http://jssql-site.github.io/jssql-site/iva/2010/04/12/jssql-download</guid>
+                <pubDate>2010-04-12T00:00:00+00:00</pubDate>
+        </item>
+
+        <item>
+                <title>General Documentation</title>
+                <description>&lt;p&gt;JS SQL Library&lt;/p&gt;
+
+&lt;p&gt;HVB Banque Luxembourg S.A.
+4, rue Alphonse Weicker
+LUXEMBOURG - LU 2721
+Luxembourg
+SWIFT/BIC: HYVELULL | Official SWIFT/BIC Reference
+URL: http://www.hvb.lu/&lt;/p&gt;
+</description>
+                <link>http://jssql-site.github.io/jssql-site/iva/2010/03/11/general-documentation</link>
+                <guid>http://jssql-site.github.io/jssql-site/iva/2010/03/11/general-documentation</guid>
+                <pubDate>2010-03-11T00:00:00+00:00</pubDate>
+        </item>
+
+
+</channel>
+</rss>

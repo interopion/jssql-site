@@ -1,0 +1,582 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title></title>
+    
+    
+    <meta name="author" content="Iva Toshkova">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <meta charset="utf-8">
+    <title>JSDoc: <?js= title ?></title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+    
+    
+    
+    <!-- Bootstrap styles -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Sticky Footer -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bs-sticky-footer.css" rel="stylesheet">
+    
+    <!-- Custom styles -->
+    <link href="/assets/themes/bootstrap-3/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!-- Update these with your own images
+      <link rel="shortcut icon" href="images/favicon.ico">
+      <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+  </head>
+
+  <body>
+    <div id="wrap">
+      <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#jb-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">JSSQL</a>
+        </div>
+		
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="jb-navbar-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+            
+
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      
+      	
+      	<li><a href="/Documentation.html">Documentation</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/Get_Started.html">Getting Started</a></li>
+      	
+      
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      
+    
+  
+    
+  
+    
+      
+      	
+      	<li><a href="/demo.html">Demo</a></li>
+      	
+      
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      
+    
+  
+    
+  
+    
+      
+    
+  
+    
+  
+
+
+
+            
+          </ul>
+          <div class="navbar-brand navbar-nav navbar-default">
+              <a href="doc">API</a>
+          </div>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+      <div class="container">
+        
+<div>
+  <h1> </h1>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    
+
+
+<div id="main">
+<p><a href="/">Back to main page</a></p>   
+    <h1 class="page-title">Source: Table.js</h1>
+    
+    
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source"><code>////////////////////////////////////////////////////////////////////////////////
+//                                                                            //
+//                              Class Table                                   //
+//                                                                            //
+////////////////////////////////////////////////////////////////////////////////
+/*
+{ 
+	databses : {
+		db1 : {
+			tables : {
+				table1 : {
+					name : "table1",
+					_length  : 5,
+					_ai      : 6,
+					_col_seq : ["id", "name"],
+					_row_seq : [1, 2, 3, 4, 5],
+					cols : {
+						id   : {},
+						name : {}
+					},
+					keys : {
+						PRIMARY    : [1, 2, 3, 4, 5],
+						name_index : [5, 2, 1, 4, 3]
+					},
+					rows : {
+						1 : [1, "Vladimir"], // JSDB.db1.table1.1
+						2 : [2, "Nikolai" ], // JSDB.db1.table1.2
+						3 : [3, "Arjun"   ], // JSDB.db1.table1.3
+						4 : [4, "Vasil"   ], // JSDB.db1.table1.4
+						5 : [5, "Iva"     ], // JSDB.db1.table1.5
+					}
+				}
+			}
+		}
+	}
+}*/
+
+/**
+ * @constructor
+ */
+function Table(tableName, db) 
+{
+	/**
+	 * The name of the table
+	 * @type String
+	 */
+	this.name = tableName;
+	
+	/**
+	 * Collection of TableRow instances by sequence
+	 * @type Object
+	 */
+	this.rows = {};
+
+	/**
+	 * The indexes of the table
+	 * @type Object
+	 */
+	this.keys = {};
+
+	/**
+	 * Collection of Column instances by name
+	 * @type Object
+	 */
+	this.cols = {};
+	
+	this._col_seq = [];
+	this._row_seq = [];
+	this._length  = 0;
+	this._ai      = 1;
+	this._db      = db;
+}
+
+Table.prototype = new Persistable();
+Table.prototype.constructor = Table;
+
+Table.prototype.createIndex = function(options) 
+{
+	var name;
+	assertType(options, "object", "Invalid argument for Table.createIndex");
+	assertType(options.name, "string", "Invalid index name");
+	name = trim(options.name);
+	assert(name, "Index name is required");
+	assert(!this.keys.hasOwnProperty(name), 'Index "%s" already exists');
+
+	this.keys[name] = {
+		index      : [],
+		columns    : [],
+		onConflict : null
+	};
+};
+
+Table.prototype.toJSON = function() 
+{
+	var json = {
+		name    : this.name,
+		columns : {},
+		rows    : {},
+		keys    : {}
+	};
+	for (var name in this.cols) {
+		json.columns[name] = this.cols[name].toJSON();
+	}
+	for ( name in this.rows) {
+		//json.rows[name] = this.rows[name].toArray();
+		json.rows[name] = this.rows[name].getStorageKey();
+	}
+	for ( name in this.keys ) {
+		json.keys[name] = this.keys[name].toJSON();
+	}
+	return json;
+};
+
+Table.prototype.getStorageKey = function() 
+{
+	return [NS, this._db.name, this.name].join(".");
+};
+
+Table.prototype.addConstraint = function(props)
+{
+	if (props.type == TableIndex.TYPE_INDEX ||
+		props.type == TableIndex.TYPE_UNIQUE ||
+		props.type == TableIndex.TYPE_PRIMARY) 
+	{
+		var key = TableIndex.fromJSON(props, this);
+		this.keys[key.name] = key;
+	}
+};
+
+Table.prototype.addColumn = function(props)
+{//console.log("Table.prototype.addColumn: ", props);
+	var col = Column.create(props);
+	
+	switch ( col.key ) {
+		case "PRIMARY":
+			//if ( "PRIMARY" in this.keys ) {
+			//	throw new SQLRuntimeError(
+			//		'A table can only have one PRIMARY KEY'
+			//	);
+			//}
+			//this.keys.PRIMARY = 
+			this.keys[ col.name ] = new TableIndex(
+				this, 
+				[ col.name ], 
+				TableIndex.TYPE_PRIMARY, 
+				col.name
+			);
+		break;
+		case "UNIQUE":
+			this.keys[ col.name ] = new TableIndex(
+				this, 
+				[ col.name ], 
+				TableIndex.TYPE_UNIQUE, 
+				col.name
+			);
+		break;
+		case "KEY":
+		case "INDEX":
+			this.keys[ col.name ] = new TableIndex(
+				this, 
+				[ col.name ], 
+				TableIndex.TYPE_INDEX, 
+				col.name
+			);
+		break;
+	}
+
+	this.cols[props.name] = col;
+	this._col_seq.push(props.name);
+	
+	if (col.key) {
+		// TODO: Add index
+	}
+	return col;
+};
+
+Table.prototype.save = function(onComplete, onError) 
+{
+	var db = this._db;
+	Persistable.prototype.save.call(this, function() {
+		db.save(onComplete, onError);	
+	}, onError);
+	return this;
+};
+
+Table.prototype.load = function(onComplete, onError) 
+{
+	var table = this;
+	JSDB.events.dispatch("loadstart:table", table);
+	table.read(function(json) {
+		var colCount = 0, 
+			name;
+
+		function onRowLoad(row) {
+			for (var ki in table.keys) {
+				table.keys[ki].beforeInsert(row);
+			}
+			table._ai = Math.max(table._ai, row.id) + 1;
+			table.rows[row.id] = row;
+			table._length++;
+			table._row_seq.push(row.id);
+			if (--colCount === 0) {
+				JSDB.events.dispatch("load:table", table);
+				if (onComplete) onComplete(table);
+			}
+		}
+
+		if (json) {
+			table.cols = {};
+			table.rows = {};
+			table.keys = {};
+			
+			// Create columns
+			for ( name in json.columns ) {//console.log(name, json.columns[name]);
+				table.addColumn(json.columns[name]);
+			}
+
+			// Create indexes
+			if (json.keys) {
+				table.keys = {};
+				table.primaryKey = null;
+				for ( name in json.keys ) {
+					table.keys[name] = TableIndex.fromJSON(json.keys[name], table);
+				}
+			}
+			
+			// Create rows
+			for ( var key in json.rows ) {//console.log(name, json.columns[name]);
+				//table.addColumn(json.columns[name]);
+				table.rows[key] = new TableRow(table, key);
+				colCount++;
+			}
+
+			// Load rows data
+			if (colCount) {
+				for ( key in table.rows ) {
+					table.rows[key].load(onRowLoad, onError);
+				}
+			} else {
+				JSDB.events.dispatch("load:table", table);
+				if (onComplete) onComplete(table);
+			}
+
+
+			
+			//this.save();
+		}
+	}, onError);
+};
+
+Table.prototype.insert = function(keys, values) 
+{
+	
+
+	var kl = keys.length,
+		rl = values.length,
+		cl = this._col_seq.length,
+		ki, // user key index 
+		ri, // user row index
+		ci, // table column index
+		row, 
+		col, 
+		key;
+
+	// for each input row
+	for (ri = 0; ri &lt; rl; ri++) {
+		row = new TableRow(this, this._ai);
+		
+		// for each user-specified column
+		for (ki = 0; ki &lt; kl; ki++) {
+			row.setCellValue(keys[ki], values[ri][ki]);
+		}
+		//console.dir(row);
+
+		for (ki in this.keys) {
+			this.keys[ki].beforeInsert(row);
+		}
+		
+		this.rows[this._ai++] = row;
+		this._length++;
+		this._row_seq.push(this._ai - 1);
+		row.save();
+	}
+
+	this.save();
+
+	//console.dir(this.toJSON());
+};
+
+Table.prototype.drop = function(onComplete, onError) 
+{
+	var table     = this, 
+		keyPrefix = table.getStorageKey(),
+		rowIds    = [],
+		id;
+
+	if (JSDB.events.dispatch("before_delete:table", table)) {
+		for ( id in table.rows ) {
+			rowIds.push(keyPrefix + "." + id);
+		}
+
+		
+		table.storage.unsetMany(rowIds, function() {
+			Persistable.prototype.drop.call(table, function() {
+				delete table._db.tables[table.name];
+				table._db.save(function() {
+					JSDB.events.dispatch("after_delete:table", table);
+					if (onComplete) 
+						onComplete();
+				}, onError);
+			}, onError);
+		}, onError);
+	}
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="Column.html">Column</a></li><li><a href="Column_BIGINT.html">Column_BIGINT</a></li><li><a href="Column_BIT.html">Column_BIT</a></li><li><a href="Column_INT.html">Column_INT</a></li><li><a href="Column_INTEGER.html">Column_INTEGER</a></li><li><a href="Column_MEDIUMINT.html">Column_MEDIUMINT</a></li><li><a href="Column_SMALLINT.html">Column_SMALLINT</a></li><li><a href="Column_TINYINT.html">Column_TINYINT</a></li><li><a href="CreateDatabaseQuery.html">CreateDatabaseQuery</a></li><li><a href="CreateTableQuery.html">CreateTableQuery</a></li><li><a href="LocalStorage.html">LocalStorage</a></li><li><a href="MemoryStorage.html">MemoryStorage</a></li><li><a href="NumericColumn.html">NumericColumn</a></li><li><a href="Result.html">Result</a></li><li><a href="Table.html">Table</a></li><li><a href="TableIndex.html">TableIndex</a></li><li><a href="TableRow.html">TableRow</a></li></ul><h3>Global</h3><ul><li><a href="global.html#floatVal">floatVal</a></li><li><a href="global.html#intVal">intVal</a></li><li><a href="global.html#prettyList">prettyList</a></li><li><a href="global.html#quote">quote</a></li><li><a href="global.html#roundToPrecision">roundToPrecision</a></li><li><a href="global.html#setCurrentDatabase">setCurrentDatabase</a></li><li><a href="global.html#Storage">Storage</a></li><li><a href="global.html#strf">strf</a></li><li>{Boolean}</li><li>{String}</li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    <!--Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Mon Jul 28 2014 14:06:33 GMT+0300 (EEST)-->
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+
+
+  </div>
+</div>
+
+
+      </div>
+
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p>&copy; 2015 Iva Toshkova
+        </p>
+      </div>
+    </div>
+
+    
+
+
+    <!-- Latest compiled and minified JavaScript, requires jQuery 1.x (2.x not supported in IE8) -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/assets/themes/bootstrap-3/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
+

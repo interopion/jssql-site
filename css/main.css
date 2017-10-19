@@ -1,0 +1,18 @@
+.green {
+	color: #faf9f7;
+	font-size: 25px;
+}
+
+.new_nav {
+
+	background: #9ad1f3;
+}
+
+.bord{
+	border: 1px solid white;
+	border-radius: 20px;
+	background: #609aa8;
+	padding: 20px;
+	box-shadow: 10px 10px 5px #888888;
+}
+

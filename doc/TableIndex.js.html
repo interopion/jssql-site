@@ -1,0 +1,537 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title></title>
+    
+    
+    <meta name="author" content="Iva Toshkova">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <meta charset="utf-8">
+    <title>JSDoc: <?js= title ?></title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+    
+    
+    
+    <!-- Bootstrap styles -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Sticky Footer -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bs-sticky-footer.css" rel="stylesheet">
+    
+    <!-- Custom styles -->
+    <link href="/assets/themes/bootstrap-3/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!-- Update these with your own images
+      <link rel="shortcut icon" href="images/favicon.ico">
+      <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+  </head>
+
+  <body>
+    <div id="wrap">
+      <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#jb-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">JSSQL</a>
+        </div>
+		
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="jb-navbar-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+            
+
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      
+      	
+      	<li><a href="/Documentation.html">Documentation</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/Get_Started.html">Getting Started</a></li>
+      	
+      
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      
+    
+  
+    
+  
+    
+      
+      	
+      	<li><a href="/demo.html">Demo</a></li>
+      	
+      
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      
+    
+  
+    
+  
+    
+      
+    
+  
+    
+  
+
+
+
+            
+          </ul>
+          <div class="navbar-brand navbar-nav navbar-default">
+              <a href="doc">API</a>
+          </div>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+      <div class="container">
+        
+<div>
+  <h1> </h1>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    
+
+
+<div id="main">
+<p><a href="/">Back to main page</a></p>   
+    <h1 class="page-title">Source: TableIndex.js</h1>
+    
+    
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source"><code>
+/**
+ * The standard index type is "INDEX".
+ * @type Number
+ * @constant
+ * @static
+ */
+TableIndex.TYPE_INDEX = 2;
+
+/**
+ * The "UNIQUE" index works like the standard index but also 
+ * checks for duplicated values before insert and update and
+ * throws exceptions if such are found.
+ * @type Number
+ * @constant
+ * @static
+ */
+TableIndex.TYPE_UNIQUE = 4;
+
+/**
+ * The "PRIMARY" index is an unique key but it also ensures that there is only
+ * one PRIMARY KEY per table
+ * @constant
+ * @static
+ */
+TableIndex.TYPE_PRIMARY = 8;
+
+/**
+ * Creates new TableIndex
+ * @constructor
+ * @param {Number} type One of the predefined TableIndex.TYPE_XXX constants.
+ * @param {Table} table The table of the index
+ * @param {Array} columns An array of one or more column names
+ * @param {String} name The name of the index. This is optional. If not provided
+ *     the name will be generated from the included column names (for multi-
+ *     column indexes it will be the column names joined with an underscore).
+ * @return {TableIndex}
+ */
+function TableIndex(table, columns, type, name)
+{
+	/**
+	 * An array of the names of the columns that are included in this index.
+	 * @type Array
+	 */
+	this.columns = [];
+
+	/**
+	 * The actual index that is just a sorted array of row IDs.
+	 * @type Array
+	 * @private
+	 */
+	this._index  = [];
+
+	this.setTable(table);
+	this.setType(type);
+	this.setName(name || columns.join("_"));
+	this.setColumns(columns);
+	this.init();
+}
+
+/**
+ * The default comparator used for sorting and binary search
+ * @static
+ */
+TableIndex.compare = function(a, b) 
+{
+	return a === b ? 0 : a > b ? 1 : -1;
+};
+
+/**
+ * Creates new instance from a configuration object and a table. This is used
+ * to load indexes from their previously saved (as JSON) state.
+ * @param {Object} json
+ * @param {Table} table
+ * @return {TableIndex}
+ */
+TableIndex.fromJSON = function(json, table) 
+{
+	var obj = new TableIndex(table, json.columns, json.type, json.name);
+	return obj;
+};
+
+TableIndex.prototype = {
+
+	/**
+	 * Creates the "_index" property of the instance. It is an array of the 
+	 * indexed column(s) values kept in sorted state
+	 */
+	init : function()
+	{
+		var allKeys = this.table._row_seq, // row IDs
+			allRows = this.table.rows,     // rows
+			allLen  = this.table._length,  // rows length
+			colLen  = this.columns.length, // number of columns in this index
+			row, id, i, y, idx;
+
+		this._index = [];
+
+		for ( i = 0; i &lt; allLen; i++ )
+		{
+			id = allKeys[i];
+			
+			row = [];
+			for ( y = 0; y &lt; colLen; y++ ) 
+			{
+				row.push( allRows[id].getCell(this.columns[y]) );
+			}
+			row = row.join("");
+
+			idx = binarySearch(this._index, row, TableIndex.compare);
+			this._index.splice(idx &lt; 0 ? -idx - 1 : idx + 1, 0, row);
+		}
+	},
+
+	/**
+	 * Updates the index state to reflect the table contents. The table calls 
+	 * this before INSERT.
+	 * @param {TableRow} row The row that is about to be inserted
+	 * @return void
+	 */
+	beforeInsert : function(row)
+	{
+		var value = [], y, i;
+
+		for ( y = 0; y &lt; this.columns.length; y++ ) 
+		{
+			value.push( row.getCell(this.columns[y]) );
+		}
+
+		value = value.join("");
+
+		i = binarySearch(this._index, value, TableIndex.compare);
+		//console.log(this.isUnique(), "IDX of ", value, ": ", i, this._index);
+
+		if ( i >= 0 && this.isUnique() ) 
+		{
+			throw new SQLRuntimeError(
+				'Duplicate entry for key "%s".',
+				this.name
+			);
+		}
+
+		i = i &lt; 0 ? -i - 1 : i + 1;
+		this._index.splice(i, 0, value);
+	},
+
+	/**
+	 * Updates the index state to reflect the table contents. The table calls 
+	 * this before UPDATE.
+	 * @param {TableRow} row The row that is about to be updated
+	 * @return void
+	 */
+	beforeUpdate : function(row) 
+	{
+		// TODO
+	},
+
+	/**
+	 * Deletes the corresponding entry from the index. The table calls 
+	 * this before DELETE.
+	 * @param {TableRow} row The row that is about to be deleted
+	 * @return void
+	 */
+	beforeDelete : function(row) 
+	{
+		// TODO
+	},
+
+	/**
+	 * Sets the columns of the index. Note that this method assumes that the 
+	 * columns do exist in the table.
+	 * @param {Array} cols
+	 * @throws {TypeError} if the argument is not an array
+	 */
+	setColumns : function(cols)
+	{
+		assertType(cols, "array");
+		this.columns = cols.slice();
+	},
+
+	/**
+	 * Sets the type of the index
+	 * @param {Number} type One of the predefined TableIndex.TYPE_XXX constants.
+	 */
+	setType : function(type)
+	{
+		switch (type) {
+			case TableIndex.TYPE_UNIQUE:
+				this.type = type;
+				break;
+			case TableIndex.TYPE_PRIMARY:
+				if ( this.table.primaryKey ) {
+					throw new SQLRuntimeError(
+						'A table can only have one PRIMARY KEY defined'
+					);
+				}
+				this.type = type;
+				this.table.primaryKey = this;
+				break;
+			//case TableIndex.TYPE_INDEX:
+			default:
+				this.type = type;
+				break;
+		}
+	},
+
+	/**
+	 * Sets the Table reference
+	 * @param {Table} table
+	 * @throws {TypeError} on invalid argument
+	 */
+	setTable : function(table)
+	{
+		assertInstance(table, Table);
+		this.table = table;
+	},
+
+	/**
+	 * Sets the name of the index
+	 * @param {String} name
+	 * @throws {TypeError} If the name argument is not a string
+	 * @throws {Error} If the name argument is empty
+	 * @throws {SQLRuntimeError} if the name is not available
+	 */
+	setName : function(name)
+	{
+		assertType(name, "string", "The name of the index must be a string");
+		name = trim(name);
+		assert(name, "The name of the index cannot be empty");
+
+		if ( name in this.table.keys ) {
+			throw new SQLRuntimeError(
+				'The table %s.%s already have a key named "%s".',
+				this.table._db.name,
+				this.table.name,
+				name
+			);
+		}
+
+		this.name = name;
+	},
+
+	/**
+	 * Returns true if the index is unique (that should be true for
+	 * UNIQUE and PRIMARY keys).
+	 * @return {Boolean}
+	 */
+	isUnique : function()
+	{
+		return  this.type === TableIndex.TYPE_UNIQUE ||
+				this.type === TableIndex.TYPE_PRIMARY;
+	},
+
+	/**
+	 * Generates the plain object representation of the index. This is used 
+	 * for serialization when the index gets saved as part of the table.
+	 * @return {Object}
+	 */
+	toJSON : function()
+	{
+		return {
+			name    : this.name,
+			type    : this.type,
+			columns : this.columns//,
+			//index   : this._index
+		};
+	},
+};
+
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="Column.html">Column</a></li><li><a href="Column_BIGINT.html">Column_BIGINT</a></li><li><a href="Column_BIT.html">Column_BIT</a></li><li><a href="Column_INT.html">Column_INT</a></li><li><a href="Column_INTEGER.html">Column_INTEGER</a></li><li><a href="Column_MEDIUMINT.html">Column_MEDIUMINT</a></li><li><a href="Column_SMALLINT.html">Column_SMALLINT</a></li><li><a href="Column_TINYINT.html">Column_TINYINT</a></li><li><a href="CreateDatabaseQuery.html">CreateDatabaseQuery</a></li><li><a href="CreateTableQuery.html">CreateTableQuery</a></li><li><a href="LocalStorage.html">LocalStorage</a></li><li><a href="MemoryStorage.html">MemoryStorage</a></li><li><a href="NumericColumn.html">NumericColumn</a></li><li><a href="Result.html">Result</a></li><li><a href="Table.html">Table</a></li><li><a href="TableIndex.html">TableIndex</a></li><li><a href="TableRow.html">TableRow</a></li></ul><h3>Global</h3><ul><li><a href="global.html#floatVal">floatVal</a></li><li><a href="global.html#intVal">intVal</a></li><li><a href="global.html#prettyList">prettyList</a></li><li><a href="global.html#quote">quote</a></li><li><a href="global.html#roundToPrecision">roundToPrecision</a></li><li><a href="global.html#setCurrentDatabase">setCurrentDatabase</a></li><li><a href="global.html#Storage">Storage</a></li><li><a href="global.html#strf">strf</a></li><li>{Boolean}</li><li>{String}</li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    <!--Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Mon Jul 28 2014 14:06:33 GMT+0300 (EEST)-->
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+
+
+  </div>
+</div>
+
+
+      </div>
+
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p>&copy; 2015 Iva Toshkova
+        </p>
+      </div>
+    </div>
+
+    
+
+
+    <!-- Latest compiled and minified JavaScript, requires jQuery 1.x (2.x not supported in IE8) -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/assets/themes/bootstrap-3/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
+

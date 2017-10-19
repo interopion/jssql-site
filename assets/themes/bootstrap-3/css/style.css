@@ -1,0 +1,175 @@
+/* Custom container */
+
+/* Replaced with normal container and standard footer */
+/*.container-narrow {
+  margin: 0 auto;
+  max-width: 700px; }
+
+.container-narrow > hr {
+  margin: 30px 0; }
+*/
+
+/* Replaced with standard BS3 Navbar */
+/*.navbar .nav {
+  float: right; }*/
+
+/* Jekyll Bootstrap Colors */
+h1, h2, h3, h4 {
+  color: #f22430;
+}
+#footer {
+  #background-color: #9ad1f3;
+}
+
+body {
+	#background: #efeeee;
+	#background : #dffafe;
+	#color      : #fff;
+	#background: url('/images/background3.jpg') scroll center center / cover #FFF;
+	font-family: monospace;
+	font-size: 14px;
+	#font-style: italic;
+
+}
+
+.border_front{
+	#border: 1px solid grey;
+	color: #6f5a5a;
+
+}
+
+.one_border{
+	background: #faeded;
+}
+
+.two_border{
+	background: #ddf0fb;
+}
+
+.three_border{
+	background: #eefcfb;
+}
+
+
+table.reference th {
+    color: #FFF;
+    background-color: #555;
+    border: 1px solid #555;
+    padding: 3px;
+    vertical-align: top;
+    text-align: left;
+}
+
+table.reference td {
+    border: 1px solid #D4D4D4;
+    padding: 7px 5px;
+    vertical-align: top;
+}
+
+table.reference tr:nth-child(even) {
+    background-color: #f8f7e4;
+}
+
+table.reserved_words tr:nth-child(odd) {
+    background-color: #e4f8e7;
+}
+
+.col{
+color: #579ea9;
+
+}
+
+.blue{
+	color: #e28909;
+	font-size: 50px;
+	text-align: center;
+}
+
+.red {
+	color:#8d0c27;
+}
+
+.sub_title {
+	font-size: 30px;
+	font-style: italic;
+	text-align: center;
+}
+
+.titles {
+	color: #36c5d2;
+}
+
+.orange{
+	color: #f1935a;
+}
+
+.api{
+	text-align: center;
+	padding-top: 10%;
+}
+
+#download_button{
+#border: 1px solid black;
+padding: 40px;
+background: #579ea9;
+color: white;
+border-radius: 10px;
+position: relative;
+top: 50px;
+bottom: 50px;
+}
+
+/* posts index */
+.post > h3.title {
+  position: relative;
+  padding-top: 10px; }
+
+.post > h3.title span.date {
+  position: absolute;
+  right: 0;
+  font-size: 0.9em; }
+
+.post > .more {
+  margin: 10px 0;
+  text-align: left; }
+
+/* post-full*/
+.post-full .date {
+  margin-bottom: 20px;
+  font-weight: bold; }
+
+/* tag_box */
+.tag_box {
+  list-style: none;
+  margin: 0;
+  overflow: hidden; }
+
+.tag_box li {
+  line-height: 28px; }
+
+.tag_box li i {
+  opacity: 0.9; }
+
+.tag_box.inline li {
+  float: left; }
+
+.tag_box a {
+  padding: 3px 6px;
+  margin: 2px;
+  background: #eee;
+  color: #555;
+  border-radius: 3px;
+  text-decoration: none;
+  border: 1px dashed #cccccc; }
+
+.tag_box a span {
+  vertical-align: super;
+  font-size: 0.8em; }
+
+.tag_box a:hover {
+  background-color: #e5e5e5; }
+
+.tag_box a.active {
+  background: #57A957;
+  border: 1px solid #4c964d;
+  color: #FFF; }
